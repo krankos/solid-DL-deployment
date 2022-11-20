@@ -38,7 +38,8 @@ function UploadImage() {
       // console.log("data.result", typeof data.result_image);
       // console.log("image: ", setImage(await data.blob()));
       // if data has a message key, then there is an error
-      if (!(contentType && contentType.indexOf("application/json") !== -1)) {
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        console.log("hello");
         setNoFace(true);
         setResultImage(null);
       } else {
@@ -141,21 +142,21 @@ function UploadImage() {
               </ul>
             </div>
           )}
-          {predictions() ? (
-            predictions() == ["Khalil"] ? (
-              <p style={"color:magenta"}>Hello Khalil</p>
-            ) : null
-          ) : null}
         </div>
       )}
       <br />
-
+      {predictions() ? (
+        predictions().length == 1 && predictions()[0][0] == "Khalil" ? (
+          <p style={"color:magenta"}>Hello Khalil</p>
+        ) : null
+      ) : null}
+      {predictions() ? console.log(predictions().length) : null}
       <br />
       <input
         type="file"
         name="myImage"
         id="selectedFile"
-        accept="image/jpeg, image/png, image/jpg"
+        accept="image/jpeg, image/jpg"
         // style={{ display: "none" }}
         onChange={(event) => {
           // console.log(event.target.files[0]);

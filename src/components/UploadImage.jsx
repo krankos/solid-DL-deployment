@@ -25,7 +25,7 @@ function UploadImage() {
       const formData = new FormData();
       formData.append("file", uploadedImage());
       const response = await fetch(
-        "https://s75ozp.deta.dev/api/predict/image",
+        "https://3360-196-235-116-206.eu.ngrok.io/api/predict/image",
         {
           method: "POST",
           body: formData,
@@ -59,10 +59,13 @@ function UploadImage() {
     try {
       const formData = new FormData();
       formData.append("file", uploadedImage());
-      const response = await fetch("https://s75ozp.deta.dev/api/predict/list", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://3360-196-235-116-206.eu.ngrok.io/api/predict/list",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       const data = await response.json();
       console.log("data", data);
       if (data.predictions.length === 0) {

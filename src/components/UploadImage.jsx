@@ -25,7 +25,7 @@ function UploadImage() {
       const formData = new FormData();
       formData.append("file", uploadedImage());
       const response = await fetch(
-        "https://3360-196-235-116-206.eu.ngrok.io/api/predict/image",
+        "https://6460-41-230-221-34.eu.ngrok.io/api/predict/image",
         {
           method: "POST",
           body: formData,
@@ -61,7 +61,7 @@ function UploadImage() {
       const formData = new FormData();
       formData.append("file", uploadedImage());
       const response = await fetch(
-        "https://3360-196-235-116-206.eu.ngrok.io/api/predict/list",
+        "https://6460-41-230-221-34.eu.ngrok.io/api/predict/list",
         {
           method: "POST",
           body: formData,
